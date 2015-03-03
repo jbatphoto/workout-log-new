@@ -1,0 +1,36 @@
+<div class="row padded">
+  <div class="large-12 columns">
+    <h1>Your <%= @workout.workout %> Workout</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-6 medium-6 columns workout-show">
+    <h2>Workout</h2>
+    <p>Date: <strong><%= @workout.date %></strong></p>
+    <p>Muscle Worked: <strong><%= @workout.workout %></strong></p>
+    <p>Mood: <strong><%= @workout.mood %></strong></p>
+    <p>Length of Workout: <strong><%= @workout.length %></strong></p>
+  </div>
+    
+  <div class="large-6 medium-6 columns workout-show">
+    <h2>Exercises</h2>
+      <%= render @workout.exercises %>
+  </div>
+</div>  
+    
+  <div class="row">
+    <div class="large-6 large-offset-3 columns">
+      <h3>Add An Exercise</h3>
+        <%= render "exercises/form" %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-8 large-offset-2 columns">
+    <%= link_to "Edit Log", edit_workout_path(@workout) %> |
+    <%= link_to "Delete Log", workout_path(@workout), method: :delete, data: {confirm: "Are You Sure?"} %> |
+    <%= link_to "Back To Logs", root_path %>
+  </div>
+</div>
+ 

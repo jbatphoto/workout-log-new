@@ -1,0 +1,46 @@
+<div class="row padded">
+  <div class="large-10 large-offset-1 columns">
+    <h2>Edit Profile</h2>
+
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        
+        <%= f.label :avatar, class: 'col-sm-2 control-label'  %>
+        <%= f.file_field :avatar %>
+        
+        <%= f.label :name %><br />
+        <%= f.text_field :name %>
+        
+        <%= f.check_box :is_female, {}, true %> <%= f.label :is_female, "Female" %>
+        <%= f.check_box :is_female, {}, false %> <%= f.label :is_female, "Male" %>
+        
+        <%= f.label :height %><br />
+        <%= f.text_field :height, required: true %>
+        
+        <%= f.label :weight %><br />
+        <%= f.text_field :weight, required: true %>
+
+        <%= f.input :email, required: true, autofocus: true %>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+        <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+        <%= f.input :password_confirmation, required: false %>
+        <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Update", class: "button" %>
+      </div>
+    <% end %>
+
+    <h3>Cancel my account</h3>
+
+    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+    <%= link_to "Back", :back %>
+  </div>
+</div>

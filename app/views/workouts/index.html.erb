@@ -1,0 +1,21 @@
+<div class="row padded">
+  <div class="large-12 columns">
+    <h1>Your Workout Logs</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="large-9 medium-9 columns">
+    <% @workouts.each do |workout| %>
+      <div class="workout-main">
+        <h2><%= link_to workout.date.strftime("%B %d, %Y"), workout %></h2>
+        <p class="workout"><%= workout.workout %></p>
+        <p><%= link_to "View Workout", workout %></p>
+    </div><!-- / end workout-main -->
+    <% end %>
+  </div>
+  <div class="large-3 medium-3 columns sidebar">
+    <%= image_tag(current_user.avatar.url(:medium), class: "rounded") %>
+    <br />
+    <%= link_to "New Log", new_workout_path, class: "button" %>
+  </div>
+</div>

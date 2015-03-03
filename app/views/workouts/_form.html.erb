@@ -1,0 +1,7 @@
+  <%= simple_form_for @workout do |f| %>
+    <%= f.input :date, label:"Date" %>
+    <%= f.input :workout, label:"What Area Did You Workout?", placeholder: 'ex: Biceps' %>
+    <%= f.input :mood, label:"How we're you feeling?", placeholder: 'ex: Jacked!' %>
+    <%= f.input :length, label:"How long was the workout?", placeholder: 'ex: 1 Hour' %>      
+    <%= f.button :submit %>
+  <% end %>

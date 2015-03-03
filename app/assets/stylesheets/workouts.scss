@@ -1,0 +1,82 @@
+// Place all the styles related to the workouts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  margin-bottom: 1em;
+}
+
+a:link, a:visited {
+  color: $primary;
+  background: #333;
+  padding: 0.5em 1.5em;
+    &:hover {
+      background: $primary;
+      color: #333;
+    }
+}
+
+.workout-main {
+  background: #333;
+  color: $white;
+  border-radius: 25px;
+  width: 40%;
+  padding: 1em 1.5em 0.2em;
+  text-align: center;
+  margin: 0 0.5em 2em;
+  display: inline-block;
+  border-top: 3px solid $primary;
+  border-bottom: 3px solid $primary;
+    h2 {
+      text-align: center;
+      font-size: 1.2em;
+      border-bottom: 1px dashed $white;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 400;
+      letter-spacing: 1px;
+      background: none;
+    }
+    a:link, a:visited {
+      color: $primary !important;
+      background: none;
+        &:hover {
+          color: $white;
+          background: none;
+        }
+    }
+    p.workout {
+      font-size: 1.3em;
+    }
+}
+
+.workout-show {
+  background: #333;
+  color: $white;
+  border-radius: 25px;
+  width: 40%;
+  padding: 1em 1.5em 0.2em;
+  text-align: center;
+  margin: 0 0.5em 2em;
+  display: inline-block;
+  border-top: 3px solid $primary;
+  border-bottom: 3px solid $primary;
+    h2 {
+      text-align: center;
+      font-size: 1.2em;
+      border-bottom: 1px dashed $white;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: $primary;
+    }
+    strong {
+      color: $primary !important;
+    }
+}
+
+.sidebar {
+  text-align: center;
+    img {
+      margin-bottom: 1em;
+    }
+}

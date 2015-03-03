@@ -1,0 +1,23 @@
+<div class="row padded">
+  <div class="large-12 columns">
+    <h1>Your Profile</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="large-8 medium-8 columns">
+    <h2>Welcome, <%= @user.name %>!</h2>
+    <p><%= link_to "Edit Profile", edit_user_registration_path, class: "button" %></p>
+    
+    
+    <p>Email: <strong><%= @user.email %></strong></p>
+    <p>Height: <strong><%= @user.height %></strong></p>
+    <p>Weight: <strong><%= @user.weight %>lbs</strong></p>
+    
+    
+  </div>
+  
+  <div class="large-3 medium-3 columns">
+    <%= image_tag(current_user.avatar.url(:medium), class: "rounded") %>
+  </div>
+  
+</div>
